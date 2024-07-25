@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Share a Coke can generator</title>
+  <meta name="generator" content="Google Web Designer 10.0.2.0105">
+  <style type="text/css" id="gwd-text-style">
+    p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+    @font-face {
+      font-family: CokeFont;
+      src: url("https://static.wixstatic.com/ufonts/49bccd_f47a3f9251ac49c9963d98d2b9485b44/woff2/file.woff2") format("woff2");
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      background-color: rgb(255, 255, 255);
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+    .v-center {
+      position: relative;
+    }
+    .gwd-img-4vw2 {
+      position: absolute;
+      width: 534px;
+      height: 354px;
+      left: 500px;
+      top: 0px;
+    }
+    .gwd-div-rfot {
+      font-family: CokeFont, Fallback, serif;
+      position: absolute;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 72px;
+      font-size: 32px;
+      width: 405px;
+      left: 64px;
+      top: 141px;
+    }
+    .gwd-div-1rcv {
+      position: absolute;
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+      font-family: Tahoma;
+      transform-origin: 50% 50% 0px;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+      width: 534px;
+      height: 132px;
+      left: 500px;
+      top: 353px;
+    }
+    .gwd-input-14er {
+      position: absolute;
+      height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 398px;
+      width: 405px;
+      left: 558px;
+    }
+    .gwd-button-koim {
+      position: absolute;
+      width: 413px;
+      height: 34px;
+      top: 446px;
+      left: 558px;
+    }
+    .gwd-img-1cjc {
+      left: 0px;
+      top: 0px;
+    }
+    .gwd-div-1b6j {
+      position: absolute;
+      width: 405px;
+      left: 64px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-family: Tahoma;
+      vertical-align: middle;
+      top: 0px;
+      line-height: 34px;
+    }
+    .gwd-button-4rel {
+      position: absolute;
+      left: 60px;
+      top: 98px;
+    }
+    .gwd-input-1wim {
+      left: 60px;
+      top: 49px;
+    }
+    .gwd-div-wthg {
+      position: absolute;
+      left: 233px;
+      width: 534px;
+      top: 554px;
+      height: 354px;
+    }
+    .gwd-div-dk51 {
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+  <script>
+    function UpdateText() {
+      var x = document.getElementById("NameBox").value;
+      document.getElementById("CokeName").innerText = x;
+      resizeContents();
+    }
+
+    function resizeContents() {
+      var resizableDivs = document.getElementsByClassName('gwd-div-rfot');
+      for (index = 0; index < resizableDivs.length; ++index) {
+        var div = resizableDivs[index];
+        if (div.innerText != '') {
+          var divWidth = div.clientWidth;
+          var divHeight = div.clientHeight;
+
+          var contentWidth = div.scrollWidth;
+          var contentHeight = div.scrollHeight;
+
+          var fontSize = div.style.fontSize;
+          fontSize = Number(fontSize.substring(0, fontSize.length - 2));
+
+          while (contentWidth <= divWidth && contentHeight <= divHeight) {
+            fontSize += 1;
+            div.style.fontSize = fontSize + 'px';
+            contentWidth = div.scrollWidth;
+            contentHeight = div.scrollHeight;
+          }
+
+          while (contentWidth > divWidth || contentHeight > divHeight) {
+            fontSize -= 1;
+            div.style.fontSize = fontSize + 'px';
+
+            contentWidth = div.scrollWidth;
+            contentHeight = div.scrollHeight;
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script type="text/javascript">
+    function downloadimage() {
+      var container = document.getElementById("CokeCanvas"); //specific element on page
+      html2canvas(container, {
+        allowTaint: true,
+        useCORS: true
+      }).then(function(canvas) {
+
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "Share a Coke with " + document.getElementById("CokeName").innerText + ".png";
+        link.href = canvas.toDataURL();
+        link.target = '_blank';
+        link.click();
+      });
+    }
+  </script>
+</head>
+
+<body class="htmlNoPages">
+  <div class="col-md-offset-4 col-md-4 col--md-offset-4 top gwd-div-dk51" id="MainDiv">
+    <div class="gwd-div-1rcv">
+      <div class="gwd-div-1b6j">Enter name here</div><br>
+      
+      <input type="text" id="NameBox" style="width: 405px; position: absolute; height: 28px;" class="gwd-input-1wim" oninput="UpdateText()">
+      <button id="print" style="width: 413px; height: 34px;" class="gwd-button-4rel" onclick="downloadimage()">Export</button>
+    </div>
+    <div id="CokeCanvas" class="gwd-img-4vw2">
+      <img src="https://static.wixstatic.com/media/49bccd_d8b6eed097194f9cade83753b100fc78~mv2.png" id="IMG_2" class="gwd-img-1cjc">
+      <div class="gwd-div-rfot" id="CokeName"></div>
+    </div>
+  </div>
+</body>
+
+</html>
